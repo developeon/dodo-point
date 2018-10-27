@@ -1,0 +1,42 @@
+.Home-image {
+    height: 90vh;
+}
+
+.Home-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.Home-navbar {
+    border-top: 2px solid #ced3d6;
+}
+.Home-navbar * {
+    height: 10vh;
+}
+
+.Home-logo-wrapper {
+    text-align: center;
+}
+
+.Home-marquee {
+    font-size: 1.2em;
+    line-height: 10vh;
+    font-weight: bold;
+}
+
+.Home-button-wrapper {
+   padding: 0;
+}
+
+.Home-button {
+    padding: 0;
+    width: 100%;
+    font-size: 1.2em;
+    border: none;
+    background-color: #4c80f1;
+    color: #ffffff;
+}
+
+.Home-button:hover {
+    background-color: #2c5ae9;
+}

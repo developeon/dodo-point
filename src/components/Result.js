@@ -56,11 +56,11 @@ class Result extends Component {
           <Col xs={12} md={4}>
             <img src="assets/coffee.jpg" alter="coffee"/>
           </Col>
-          <Col xs={6} md={8}>
+          <Col xs={12} md={8}>
             {(point >= 100) ? (
               <div>
                <Row>
-               <Col xs={12} md={10}>
+               <Col xs={10} md={10}>
                   <strong>
                   <LinesEllipsis
                       text='아메리카노아메리카노아메리카노아카노아메리카노아메리카노아메리카노'
@@ -71,7 +71,7 @@ class Result extends Component {
                   />
                   </strong>
                 </Col>
-                <Col xs={6} md={2}>
+                <Col xs={2} md={2}>
                   교환 가능
                 </Col>
                </Row>

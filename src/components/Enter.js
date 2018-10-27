@@ -50,7 +50,7 @@ class Enter extends Component {
           
         </Row>
         <Row>
-          <Col className="info-box" xs={6} md={4}>
+          <Col className="info-box" xs={12} md={4}>
             <div>
               <font size="6">
                 <font color="#4c80f1">100P</font> 적립

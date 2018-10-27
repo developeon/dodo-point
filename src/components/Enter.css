@@ -76,12 +76,7 @@
 
 /* For responsive page */
 @media (max-width: 992px) {
-    .col-xs-6, .col-md-8 {
-        width: 100%;
-        padding:12px;
-    }
-
-    .col-xs-6 {
+    .col-xs-12 {
         overflow:hidden;
         height:auto;
     }
