@@ -32,10 +32,19 @@ class Enter extends Component {
 
   handleSubmit = () => {
     const { phone } = this.state;
+    if (!this.validatePhone(phone)) {
+      alert('적립은 휴대전화 번호로만 가능합니다. 휴대전화 번호를 정확히 입력해주세요.');
+      return;
+    }
     const prevPoint = localStorage.getItem(phone) ? localStorage.getItem(phone) : 0;
     const nextPoint = Number.parseInt(prevPoint) + 100;
     localStorage.setItem(phone, nextPoint);
     this.props.history.push('/result?phone=' + this.state.phone);
+  }
+
+  validatePhone = (Phone) => {
+    const re = /(01[0|1|6|9|7])[-](\d{3}|\d{4})[-](\d{4}$)/g;
+    return re.test(Phone);
   }
 
   render() {
