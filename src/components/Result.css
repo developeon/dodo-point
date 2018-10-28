@@ -1,4 +1,9 @@
-.point, .item {
+.Result-background {
+    background-color: #e1e4e6
+}
+
+/* 상단 DIV와 하단 DIV 공통 CSS */
+.Result-top, .Result-bottom {
     text-align: center;
     background-color: #ffffff;
     width: 100%;
@@ -7,17 +12,18 @@
     margin-left: 0;
 }
 
-.point {
+/* 상단 DIV */
+.Result-top {
     height: 64vh;
     display: table;
 }
 
-.content {
+.Result-wrapper {
     display: table-cell;
     vertical-align: middle;
 }
 
-.save-point:after {
+.Result-save:after {
     content: "";
     display: block;
     width: 200px;
@@ -25,27 +31,28 @@
     margin: 1em auto;
 }
 
-.item {
+/* 하단 DIV */
+.Result-bottom {
     margin-bottom:2vh;
 }
 
-.item .col-md-4 {
+.Result-bottom .col-md-4 {
     padding: 0;
 }
 
-.item .col-md-8 {
+.Result-bottom .col-md-8 {
     text-align: left;
     font-size: 1.5em;
     padding: 15px;
     height: 30vh;
 }
 
-.item img{
+.Result-bottom img{
     height: 30vh;
     width: 100%;
 }
 
-.button-wrapper {
+.Result-button {
     text-align: center;
     position: absolute;
     bottom: 15px;

@@ -95,14 +95,14 @@ class Enter extends Component {
 
     return (
       <Grid fluid>
-        <Row>
-          <div className="alter">
-            휴대전화번호를 눌러주세요.
-            <div className="back"><Link to="/" className="back-link">취소 X</Link></div>
+        <Row className="Enter-top">
+          휴대전화번호를 눌러주세요.
+          <div className="Enter-cancel">
+            <Link to="/">취소 X</Link>
           </div>
         </Row>
-        <Row>
-          <Col className="info-box" xs={12} md={4}>
+        <Row className="Eneter-botton">
+          <Col className="Enter-left" xs={12} md={4}>
             <div>
               <font size="6">
                 <font color="#4c80f1">100 P</font> 적립
@@ -116,30 +116,30 @@ class Enter extends Component {
               <font size="3">입력하신 휴대번호로 매장의 카카오톡 알림톡이 전송됩니다.</font>
             </div>
           </Col>
-          <Col className="keypad-box" xs={12} md={8}>
-              <div className="phone-box">
-                <p className="input">{phone}</p>
-                <p className="terms">이용약관과 개인정보 취급방침에 동의하시면 휴대전화번호 입력 후 아래 적립 버튼을 눌러주세요.</p>
+          <Col className="Enter-right" xs={12} md={8}>
+              <div className="Enter-display">
+                <p className="Enter-input">{phone}</p>
+                <p className="Enter-terms">이용약관과 개인정보 취급방침에 동의하시면 휴대전화번호 입력 후 아래 적립 버튼을 눌러주세요.</p>
               </div>
-              <div className="keypad-group">
+              <div className="Enter-keypad">
                 <button onClick={this.handleClick} value="1">1</button>
                 <button onClick={this.handleClick} value="2">2</button>
                 <button onClick={this.handleClick} value="3">3</button>
               </div>
-              <div className="keypad-group">
+              <div className="Enter-keypad">
                 <button onClick={this.handleClick} value="4">4</button>
                 <button onClick={this.handleClick} value="5">5</button>
                 <button onClick={this.handleClick} value="6">6</button>
               </div>
-              <div className="keypad-group">
+              <div className="Enter-keypad">
                 <button onClick={this.handleClick} value="7">7</button>
                 <button onClick={this.handleClick} value="8">8</button>
                 <button onClick={this.handleClick} value="9">9</button>
               </div>
-              <div className="keypad-group">
+              <div className="Enter-keypad">
                 <button onClick={this.handleRemove}>&larr;</button>
                 <button onClick={this.handleClick} value="0">0</button>
-                <button id="save-button" onClick={this.handleSubmit}>적립</button>
+                <button id="Enter-button" onClick={this.handleSubmit}>적립</button>
               </div>
           </Col>
         </Row>

@@ -28,7 +28,7 @@ class Home extends Component {
             <Col xs={8} md={8}>
               <Marquee 
                 className="Home-marquee"
-                text='cd coffee (본점)' 
+                text='cd coffee (본점) cd coffee (본점) cd coffee (본점) cd coffee (본점) cd coffee (본점) cd coffee (본점) cd coffee (본점) cd coffee (본점) cd coffee (본점) cd coffee (본점)' 
                 hoverToStop={true}
                 loop={true}
               />

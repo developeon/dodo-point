@@ -1,4 +1,5 @@
-.alter {
+/* 상단 div (Alter 영역) */
+.Enter-top {
     text-align: center;
     border-bottom: 2px solid #ced3d6;
     height: 8vh;
@@ -6,24 +7,24 @@
     font-size:1.5em;
 }
 
-.back {
+.Enter-cancel {
     float: right;
     margin-right: 24px;
 }
 
-.back-link, .back-link:hover {
+.Enter-cancel a, .Enter-cancel a:hover {
     text-decoration: none;
     color: #878d91;
 }
 
-/* left side box */
-.info-box {
+/* 왼쪽 div (information 영역) */
+.Enter-left {
     background-color: #e1e4e6;
     padding: 12px;
     height: 92vh;
 }
 
-.info-box div {
+.Enter-left div {
     background-color: #ffffff;
     border: 1px solid #e1e4e6;
     border-radius: 3px;
@@ -31,27 +32,27 @@
     padding: 12px;
 }
 
-/* right size box*/
-.keypad-box {
+/* 오른쪽 div (키패드 영역) */
+.Enter-right {
     text-align: center;
     height: 92vh;
 }
 
-.input {
+.Enter-display {
+    height: 26vh;
+}
+
+.Enter-input {
     font-size: 3em;
     padding: 1em;
 }
 
-.terms {
+.Enter-terms {
     font-size: 1em;
     color: #878d91;
 }
 
-.phone-box {
-    height: 26vh;
-}
-
-.keypad-group button {
+.Enter-keypad button {
     height: 16vh;
     width: 33%;
     background-color: #ffffff;
@@ -60,26 +61,26 @@
     outline: none;
     font-size: 2em;
 }
-.keypad-group button:not(:last-child) {
+.Enter-keypad button:not(:last-child) {
     border-right: none; /* Prevent double borders */
 }
 
-.keypad-group button:hover {
+.Enter-keypad button:hover {
     background-color: #f1f5f5;
 }
 
-#save-button {
+#Enter-button {
     background-color: #4c80f1;
     border: 1px solid  #4c80f1;
     color: #ffffff;
 }
 
-#save-button:hover {
+#Enter-button:hover {
     background-color: #2c5ae9;
     border: 1px solid  #2c5ae9;
 }
 
-/* For responsive page */
+/* 992px 이하일때 왼쪽 div (information 영역) 처리 */
 @media (max-width: 992px) {
     .col-xs-12 {
         overflow:hidden;
