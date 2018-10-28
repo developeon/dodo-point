@@ -11,13 +11,13 @@ class Home extends Component {
           <Row className="Home-image">
             <Carousel>
               <Carousel.Item>
-                <img alt="도도 포인트 앱" src="assets/main_00.jpg" />
+                <img alt="슬라이드이미지_00" src="assets/main_00.jpg" />
               </Carousel.Item>
               <Carousel.Item>
-                <img alt="카페 외관" src="assets/main_01.jpg" />
+                <img alt="슬라이드이미지_01" src="assets/main_01.jpg" />
               </Carousel.Item>
               <Carousel.Item>
-                <img alt="카페 내부" src="assets/main_02.jpg" />
+                <img alt="슬라이드이미지_02" src="assets/main_02.jpg" />
               </Carousel.Item>
             </Carousel>
           </Row>

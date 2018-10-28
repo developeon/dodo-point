@@ -10,6 +10,7 @@ class Result extends Component {
 
   componentDidMount(){
     const phone = new URLSearchParams(this.props.location.search).get('phone');
+    
     this.setState({
       point : localStorage.getItem(phone) ? localStorage.getItem(phone) : 0
     })
@@ -20,8 +21,10 @@ class Result extends Component {
   }
 
   render() {
-    const { point } = this.state;
-    const backgroundDiv = {
+    const { 
+      point 
+    } = this.state;
+    const backgroundDiv = { 
       backgroundColor: '#e1e4e6'
     }
     const span1 = {
@@ -38,57 +41,56 @@ class Result extends Component {
 
     return (
       <div style={backgroundDiv}>
-      <Grid>
-        <Row className="point">
-          <div className="content">
-            <div className="save-point">
-              <span style={span1}>100 P</span>
-              <br/>
-              <span style={span2}>적립완료</span>
-            </div>
-            <div className="after-point">
-              <span style={span3}>보유포인트는 {point} P 입니다.</span>
-            </div>
-          </div>
-        </Row>
-        <Row className="item">
-          <Col xs={12} md={4}>
-            <img src="assets/coffee.jpg" alt="coffee"/>
-          </Col>
-          <Col xs={12} md={8}>
-            {(point >= 100) ? (
-              <div>
-               <Row>
-               <Col xs={10} md={10}>
-                  <strong>
-                  <LinesEllipsis
-                      text='아메리카노아메리카노아메리카노아메리카노아메리카노아메리카노아메리카노'
-                      maxLine='1'
-                      ellipsis=' &middot;&middot;&middot;'
-                      trimRight
-                      basedOn='letters'
-                  />
-                  </strong>
-                </Col>
-                <Col xs={2} md={2}>
-                  교환 가능
-                </Col>
-               </Row>
-               <Row className="button-wrapper">
-                <button onClick={this.usePoint}>사용하기</button>
-               </Row>
-              </div>
-            ) : (
-              <div>
-                <font color="#4c80f1">{100-point} P</font> 더 모으면
+        <Grid>
+          <Row className="point">
+            <div className="content">
+              <div className="save-point">
+                <span style={span1}>100 P</span>
                 <br/>
-                <strong>아메리카노</strong> 교환 가능
+                <span style={span2}>적립완료</span>
               </div>
-            )
-            }
-          </Col>
-        </Row>
-      </Grid>
+              <div className="after-point">
+                <span style={span3}>보유포인트는 {point} P 입니다.</span>
+              </div>
+            </div>
+          </Row>
+          <Row className="item">
+            <Col xs={12} md={4}>
+              <img src="assets/coffee.jpg" alt="coffee"/>
+            </Col>
+            <Col xs={12} md={8}>
+              {(point >= 100) ? (
+                <div>
+                <Row>
+                <Col xs={10} md={10}>
+                    <strong>
+                    <LinesEllipsis
+                        text='아메리카노아메리카노아메리카노아메리카노아메리카노아메리카노아메리카노'
+                        maxLine='1'
+                        ellipsis=' &middot;&middot;&middot;'
+                        trimRight
+                        basedOn='letters'
+                    />
+                    </strong>
+                  </Col>
+                  <Col xs={2} md={2}>
+                    교환 가능
+                  </Col>
+                </Row>
+                <Row className="button-wrapper">
+                  <button onClick={this.usePoint}>사용하기</button>
+                </Row>
+                </div>
+              ) : (
+                <div>
+                  <font color="#4c80f1">{100-point} P</font> 더 모으면
+                  <br/>
+                  <strong>아메리카노</strong> 교환 가능
+                </div>
+              )}
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }
