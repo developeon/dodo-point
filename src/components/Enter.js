@@ -2,15 +2,22 @@ import React, { Component } from 'react';
 import './Enter.css';
 import { Link } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-bootstrap';
-import CryptoJS from  "crypto-js"; //전화번호를 Hash값으로 암호화
+import CryptoJS from  "crypto-js"; // 전화번호를 Hash값으로 암호화
 
 class Enter extends Component {
   state = {
-    phone: '010-'
+    phone: '010-',
+    recPoint: 0
   }
 
   componentDidMount(){
     document.addEventListener("keydown", this.handleKeydown, false);
+    const min = 10;
+    const max = 100;
+    const rand = Math.floor(Math.random()*(max-min+1)) + min;
+    this.setState({ 
+      recPoint: this.state.recPoint + rand
+    });
   }
   componentWillUnmount(){
     document.removeEventListener("keydown", this.handleKeydown, false);
@@ -23,7 +30,9 @@ class Enter extends Component {
                           // 8: Backspace
                           // 13: Enter
 
-   if (keyId >= 96 && keyId <= 105) keyId -= 48; // 숫자키패드의 경우 강제로 숫자값으로 변환
+   if (keyId >= 96 && keyId <= 105) {
+     keyId -= 48; // 숫자키패드의 경우 강제로 숫자값으로 변환
+   }
    if ((keyId >= 48 && keyId <= 57)) {
      this.handleDisplay(String.fromCharCode(keyId));
    } else if (keyId === 8) {
@@ -69,7 +78,8 @@ class Enter extends Component {
 
   handleSubmit = () => {
     const { 
-      phone 
+      phone,
+      recPoint
     } = this.state;
     const hashedPhone = CryptoJS.SHA256(phone).toString() ; 
     const prevPoint = localStorage.getItem(hashedPhone) ? localStorage.getItem(hashedPhone) : 0;
@@ -78,8 +88,8 @@ class Enter extends Component {
       alert('적립은 휴대전화 번호로만 가능합니다. 휴대전화 번호를 정확히 입력해주세요.');
       return;
     }
-    localStorage.setItem(hashedPhone, Number.parseInt(prevPoint) + 100);
-    this.props.history.push('/result?phone=' + hashedPhone);
+    localStorage.setItem(hashedPhone, Number.parseInt(prevPoint) + recPoint);
+    this.props.history.push('/result?phone=' + hashedPhone + '&recPoint=' + recPoint);
   }
 
   /* 휴대전화번호 유효성 체크 */
@@ -90,7 +100,8 @@ class Enter extends Component {
 
   render() {
     const { 
-      phone 
+      phone,
+      recPoint
     } = this.state;
 
     return (
@@ -105,7 +116,7 @@ class Enter extends Component {
           <Col className="Enter-left" xs={12} md={4}>
             <div>
               <font size="6">
-                <font color="#4c80f1">100 P</font> 적립
+                <font color="#4c80f1">{recPoint} P</font> 적립
               </font>
             </div>
             <div>

@@ -5,14 +5,17 @@ import LinesEllipsis from 'react-lines-ellipsis';
 
 class Result extends Component {
   state = {
-    point: '0'
+    nowPoint: 0,
+    recPoint: 0
   }
 
   componentDidMount(){
     const phone = new URLSearchParams(this.props.location.search).get('phone');
+    const recPoint = new URLSearchParams(this.props.location.search).get('recPoint');
     
     this.setState({
-      point : localStorage.getItem(phone) ? localStorage.getItem(phone) : 0
+      nowPoint : localStorage.getItem(phone) ? localStorage.getItem(phone) : 0,
+      recPoint : recPoint
     })
   }
 
@@ -22,7 +25,8 @@ class Result extends Component {
 
   render() {
     const { 
-      point 
+      nowPoint,
+      recPoint
     } = this.state;
     const span1 = {
       color: '#4c80f1',
@@ -43,10 +47,10 @@ class Result extends Component {
           <Row className="Result-top">
             <div className="Result-wrapper">
               <div className="Result-save">
-                <span style={span1}>100 P</span>
+                <span style={span1}>{recPoint} P</span>
                 <span style={span2}>적립완료</span>
               </div>
-              <span style={span3}>보유포인트는 {point} P 입니다.</span>
+              <span style={span3}>보유포인트는 {nowPoint} P 입니다.</span>
             </div>
           </Row>
           <Row className="Result-bottom">
@@ -54,7 +58,7 @@ class Result extends Component {
               <img src="assets/coffee.jpg" alt="coffee"/>
             </Col>
             <Col xs={12} md={8}>
-              {(point >= 100) ? (
+              {(nowPoint >= 100) ? (
                 <div>
                   <Row>
                     <Col xs={10} md={10}>
@@ -78,7 +82,7 @@ class Result extends Component {
                 </div>
                ) : (
                 <div>
-                  <font color="#4c80f1">{100-point} P</font> 더 모으면
+                  <font color="#4c80f1">{100-nowPoint} P</font> 더 모으면
                   <br/>
                   <strong>아메리카노</strong> 교환 가능
                 </div>
