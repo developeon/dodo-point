@@ -16,7 +16,7 @@ class Result extends Component {
     
     this.setState({
       nowPoint : localStorage.getItem(phone) ? localStorage.getItem(phone) : 0,
-      recPoint : recPoint
+      recPoint : recPoint ? recPoint : 0
     })
   }
 

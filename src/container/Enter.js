@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './Enter.css';
 import { Link } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-bootstrap';
-import CryptoJS from  "crypto-js"; // 전화번호를 Hash값으로 암호화
+import CryptoJS from  'crypto-js'; // 전화번호를 Hash값으로 암호화
+import Keypad from '../components/Keypad';
 
 class Enter extends Component {
   state = {
@@ -132,26 +133,11 @@ class Enter extends Component {
                 <p className="Enter-input">{phone}</p>
                 <p className="Enter-terms">이용약관과 개인정보 취급방침에 동의하시면 휴대전화번호 입력 후 아래 적립 버튼을 눌러주세요.</p>
               </div>
-              <div className="Enter-keypad">
-                <button onClick={this.handleClick} value="1">1</button>
-                <button onClick={this.handleClick} value="2">2</button>
-                <button onClick={this.handleClick} value="3">3</button>
-              </div>
-              <div className="Enter-keypad">
-                <button onClick={this.handleClick} value="4">4</button>
-                <button onClick={this.handleClick} value="5">5</button>
-                <button onClick={this.handleClick} value="6">6</button>
-              </div>
-              <div className="Enter-keypad">
-                <button onClick={this.handleClick} value="7">7</button>
-                <button onClick={this.handleClick} value="8">8</button>
-                <button onClick={this.handleClick} value="9">9</button>
-              </div>
-              <div className="Enter-keypad">
-                <button onClick={this.handleRemove}>&larr;</button>
-                <button onClick={this.handleClick} value="0">0</button>
-                <button id="Enter-button" onClick={this.handleSubmit}>적립</button>
-              </div>
+              <Keypad
+                onClick={this.handleClick}
+                onRemove={this.handleRemove}
+                onSubmit={this.handleSubmit}
+              />
           </Col>
         </Row>
       </Grid>
