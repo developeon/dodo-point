@@ -6,7 +6,7 @@ import CryptoJS from  "crypto-js"; //전화번호를 Hash값으로 암호화
 
 class Enter extends Component {
   state = {
-    phone: '010'
+    phone: '010-'
   }
 
   componentDidMount(){
