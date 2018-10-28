@@ -9,7 +9,7 @@ class Home extends Component {
     return (
         <Grid fluid> 
           <Row className="Home-image">
-            <img src="assets/dodo-point.jpg" alt="dodo-point-image"/>
+            <img src="assets/dodo-point.jpg" alt="dodo-point-main"/>
           </Row>
           <Row className="Home-navbar">
             <Col xs={2} md={2} className="Home-logo-wrapper">

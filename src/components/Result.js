@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Result.css';
-import { Link } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-bootstrap';
 import LinesEllipsis from 'react-lines-ellipsis';
 
@@ -54,7 +53,7 @@ class Result extends Component {
         </Row>
         <Row className="item">
           <Col xs={12} md={4}>
-            <img src="assets/coffee.jpg" alter="coffee"/>
+            <img src="assets/coffee.jpg" alt="coffee"/>
           </Col>
           <Col xs={12} md={8}>
             {(point >= 100) ? (
@@ -63,7 +62,7 @@ class Result extends Component {
                <Col xs={10} md={10}>
                   <strong>
                   <LinesEllipsis
-                      text='아메리카노아메리카노아메리카노아카노아메리카노아메리카노아메리카노'
+                      text='아메리카노아메리카노아메리카노아메리카노아메리카노아메리카노아메리카노'
                       maxLine='1'
                       ellipsis=' &middot;&middot;&middot;'
                       trimRight
@@ -81,7 +80,7 @@ class Result extends Component {
               </div>
             ) : (
               <div>
-                <font color="#4c80f1">5 P</font> 더 모으면
+                <font color="#4c80f1">{100-point} P</font> 더 모으면
                 <br/>
                 <strong>아메리카노</strong> 교환 가능
               </div>
