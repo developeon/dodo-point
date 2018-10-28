@@ -3,6 +3,7 @@ import './Enter.css';
 import { Link } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-bootstrap';
 import CryptoJS from  'crypto-js'; // 전화번호를 Hash값으로 암호화
+import Information from '../components/Information';
 import Display from '../components/Display';
 import Keypad from '../components/Keypad';
 
@@ -116,18 +117,9 @@ class Enter extends Component {
         </Row>
         <Row className="Eneter-botton">
           <Col className="Enter-left" xs={12} md={4}>
-            <div>
-              <font size="6">
-                <font color="#4c80f1">{recPoint} P</font> 적립
-              </font>
-            </div>
-            <div>
-              <font size="5">
-                Kakao<strong>Talk</strong>
-              </font>
-              <p/>
-              <font size="3">입력하신 휴대번호로 매장의 카카오톡 알림톡이 전송됩니다.</font>
-            </div>
+            <Information 
+              recPoint={recPoint}
+            />
           </Col>
           <Col className="Enter-right" xs={12} md={8}>
               <Display 
