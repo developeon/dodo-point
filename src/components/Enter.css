@@ -47,7 +47,12 @@
     color: #878d91;
 }
 
+.phone-box {
+    height: 26vh;
+}
+
 .keypad-group button {
+    height: 16vh;
     width: 33%;
     background-color: #ffffff;
     border: 1px solid #e1e4e6;
