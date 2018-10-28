@@ -1,5 +1,7 @@
 .Home-image {
-    height: 90vh;
+    height: 92vh;
+    margin-top: -2vh;
+    overflow: hidden;
 }
 
 .Home-image img {
@@ -9,7 +11,10 @@
 
 .Home-navbar {
     border-top: 2px solid #ced3d6;
+    height: 10vh;
+    margin-top: -2px;
 }
+
 .Home-navbar * {
     height: 10vh;
 }
@@ -39,4 +44,13 @@
 
 .Home-button:hover {
     background-color: #2c5ae9;
+}
+
+/* For carousel */
+.carousel {
+    height: 92vh;
+}
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img {
+    height: 92vh;
 }

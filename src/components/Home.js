@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Carousel } from 'react-bootstrap';
 import Marquee from 'react-text-marquee';
 
 class Home extends Component {
@@ -9,7 +9,17 @@ class Home extends Component {
     return (
         <Grid fluid> 
           <Row className="Home-image">
-            <img src="assets/dodo-point.jpg" alt="dodo-point-main"/>
+            <Carousel>
+              <Carousel.Item>
+                <img alt="도도 포인트 앱" src="assets/main_00.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img alt="카페 외관" src="assets/main_01.jpg" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img alt="카페 내부" src="assets/main_02.jpg" />
+              </Carousel.Item>
+            </Carousel>
           </Row>
           <Row className="Home-navbar">
             <Col xs={2} md={2} className="Home-logo-wrapper">
