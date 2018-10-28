@@ -8,23 +8,31 @@ class Enter extends Component {
     phone: '010'
   }
 
-  handleChange = (e) => {
+  handleClick = (e) => {
+    this.handleDisplay(e.target.value);
+  }
+
+  handleDisplay = (number) => {
     if(this.state.phone.length > 12) {
       alert("휴대전화 전화번호의 길이를 초과했습니다.");
       return;
     }
     if (this.state.phone.length === 3 || this.state.phone.length === 8) {
       this.setState({
-        phone : this.state.phone.concat("-").concat(e.target.value) 
+        phone : this.state.phone.concat("-").concat(number) 
       });
     } else {
       this.setState({
-        phone : this.state.phone.concat(e.target.value) 
+        phone : this.state.phone.concat(number) 
       });
     }
   }
 
   handleRemove = () => {
+    if(this.state.phone.length < 3){ // 01X 사용자를 위해 최소길이 2로 지정
+      alert("적립은 휴대전화 번호로만 가능합니다");
+      return;
+    }
     this.setState({
       phone : this.state.phone.slice(0,-1) 
     });
@@ -47,6 +55,28 @@ class Enter extends Component {
     return re.test(Phone);
   }
 
+  /* 키보드 입력 이벤트  */
+  handleKeydown = (e) => {
+     // kekyId의 값은 48~57:일반 숫자키 코드, 96~105:숫자키패드 숫자키 코드, 13: 엔터, 8: backspace
+    let keyId = e.keyCode;
+
+    if (keyId >= 96 && keyId <= 105) keyId -= 48; //{ 숫자키패드의 경우 강제로 숫자값으로 변환
+    if((keyId >= 48 && keyId <= 57)) {
+      this.handleDisplay(String.fromCharCode(keyId));
+		} else if (keyId === 8) {
+      this.handleRemove();
+    } else if (keyId === 13) {
+      this.handleSubmit();
+    } 
+  }
+
+  componentDidMount(){
+    document.addEventListener("keydown", this.handleKeydown, false);
+  }
+  componentWillUnmount(){
+    document.removeEventListener("keydown", this.handleKeydown, false);
+  }
+
   render() {
     const { phone } = this.state;
     return (
@@ -62,7 +92,7 @@ class Enter extends Component {
           <Col className="info-box" xs={12} md={4}>
             <div>
               <font size="6">
-                <font color="#4c80f1">100P</font> 적립
+                <font color="#4c80f1">100 P</font> 적립
               </font>
             </div>
             <div>
@@ -79,23 +109,23 @@ class Enter extends Component {
                 <p className="terms">이용약관과 개인정보 취급방침에 동의하시면 휴대전화번호 입력 후 아래 적립 버튼을 눌러주세요.</p>
               </div>
               <div className="keypad-group">
-                <button onClick={this.handleChange} value="1">1</button>
-                <button onClick={this.handleChange} value="2">2</button>
-                <button onClick={this.handleChange} value="3">3</button>
+                <button onClick={this.handleClick} value="1">1</button>
+                <button onClick={this.handleClick} value="2">2</button>
+                <button onClick={this.handleClick} value="3">3</button>
               </div>
               <div className="keypad-group">
-                <button onClick={this.handleChange} value="4">4</button>
-                <button onClick={this.handleChange} value="5">5</button>
-                <button onClick={this.handleChange} value="6">6</button>
+                <button onClick={this.handleClick} value="4">4</button>
+                <button onClick={this.handleClick} value="5">5</button>
+                <button onClick={this.handleClick} value="6">6</button>
               </div>
               <div className="keypad-group">
-                <button onClick={this.handleChange} value="7">7</button>
-                <button onClick={this.handleChange} value="8">8</button>
-                <button onClick={this.handleChange} value="9">9</button>
+                <button onClick={this.handleClick} value="7">7</button>
+                <button onClick={this.handleClick} value="8">8</button>
+                <button onClick={this.handleClick} value="9">9</button>
               </div>
               <div className="keypad-group">
                 <button onClick={this.handleRemove}>&larr;</button>
-                <button onClick={this.handleChange} value="0">0</button>
+                <button onClick={this.handleClick} value="0">0</button>
                 <button id="save-button" onClick={this.handleSubmit}>적립</button>
               </div>
           </Col>
