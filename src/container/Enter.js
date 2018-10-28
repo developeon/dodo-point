@@ -3,6 +3,7 @@ import './Enter.css';
 import { Link } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-bootstrap';
 import CryptoJS from  'crypto-js'; // 전화번호를 Hash값으로 암호화
+import Display from '../components/Display';
 import Keypad from '../components/Keypad';
 
 class Enter extends Component {
@@ -129,10 +130,9 @@ class Enter extends Component {
             </div>
           </Col>
           <Col className="Enter-right" xs={12} md={8}>
-              <div className="Enter-display">
-                <p className="Enter-input">{phone}</p>
-                <p className="Enter-terms">이용약관과 개인정보 취급방침에 동의하시면 휴대전화번호 입력 후 아래 적립 버튼을 눌러주세요.</p>
-              </div>
+              <Display 
+                phone={phone}
+              />
               <Keypad
                 onClick={this.handleClick}
                 onRemove={this.handleRemove}
