@@ -79,5 +79,6 @@
     .col-xs-12 {
         overflow:hidden;
         height:auto;
+        padding-bottom: 12px;
     }
 }
