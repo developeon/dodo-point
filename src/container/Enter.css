@@ -36,6 +36,7 @@
 .Enter-right {
     text-align: center;
     height: 92vh;
+    padding: 0;
 }
 
 /* 992px 이하일때 왼쪽 div (information 영역) 처리 */

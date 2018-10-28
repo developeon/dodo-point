@@ -115,7 +115,7 @@ class Enter extends Component {
             <Link to="/">취소 X</Link>
           </div>
         </Row>
-        <Row className="Eneter-botton">
+        <Row className="Enter-bottom">
           <Col className="Enter-left" xs={12} md={4}>
             <Information 
               recPoint={recPoint}
