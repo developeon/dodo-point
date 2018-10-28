@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Enter.css';
 import { Link } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-bootstrap';
+import CryptoJS from  "crypto-js";
 
 class Enter extends Component {
   state = {
@@ -44,10 +45,10 @@ class Enter extends Component {
       alert('적립은 휴대전화 번호로만 가능합니다. 휴대전화 번호를 정확히 입력해주세요.');
       return;
     }
-    const prevPoint = localStorage.getItem(phone) ? localStorage.getItem(phone) : 0;
-    const nextPoint = Number.parseInt(prevPoint) + 100;
-    localStorage.setItem(phone, nextPoint);
-    this.props.history.push('/result?phone=' + this.state.phone);
+    const hashedPhone = CryptoJS.SHA256(phone).toString() ; 
+    const prevPoint = localStorage.getItem(hashedPhone) ? localStorage.getItem(hashedPhone) : 0;
+    localStorage.setItem(hashedPhone, Number.parseInt(prevPoint) + 100);
+    this.props.history.push('/result?phone=' + hashedPhone);
   }
 
   validatePhone = (Phone) => {
