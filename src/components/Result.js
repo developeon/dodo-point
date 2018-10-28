@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Result.css';
+import { Link } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-bootstrap';
 import LinesEllipsis from 'react-lines-ellipsis';
 
@@ -43,9 +44,10 @@ class Result extends Component {
 
     return (
       <div className="Result-background">
-        <Grid>
+        <Grid fluid>
           <Row className="Result-top">
             <div className="Result-wrapper">
+                <Link className="Result-link" to="/">홈 X</Link>
               <div className="Result-save">
                 <span style={span1}>{recPoint} P</span>
                 <span style={span2}>적립완료</span>

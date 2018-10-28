@@ -21,6 +21,18 @@
 .Result-wrapper {
     display: table-cell;
     vertical-align: middle;
+    position: relative;
+}
+
+.Result-link, .Result-link:hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-decoration: none;
+    color: #878d91;
+    line-height: 8vh;
+    font-size: 1.5em;
+    margin-right: 24px;
 }
 
 .Result-save:after {
