@@ -1,0 +1,13 @@
+.Display-wrapper {
+    height: 26vh;
+}
+
+.Display-input {
+    font-size: 3em;
+    padding: 1em;
+}
+
+.Display-terms {
+    font-size: 1em;
+    color: #878d91;
+}
