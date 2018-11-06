@@ -2,7 +2,7 @@
 도도 포인트 가맹점에 비치된 아이패드 등의 태블릿 기기 위에 띄워져, 매장을 방문한 손님에게 보여지는 **포인트 적립 프로그램**입니다. 여기서 앱은 안드로이드, iOS 같은 실기기가 아닌 웹앱을 말합니다.
 
 ## 시현영상
-![시현영상](https://raw.githubusercontent.com/developeon/Image/master/test.gif)
+![시현영상](https://raw.githubusercontent.com/developeon/dodo-point/master/test.gif)
 
 ## 기능
   #### 필수 구현 사항
